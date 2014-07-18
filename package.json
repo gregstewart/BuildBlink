@@ -1,67 +1,69 @@
 {
-    "name": "buildblink",
-    "version": "0.0.4",
-    "description": "an application to monitor continuous integration builds and notify you by a ThingM blink1 light.",
-    "author": "Brett Swift <brettswift@gmail.com>",
-    "contributors": [
-        {
-            "name": "Brett Swift",
-            "email": "brettswift@gmail.com"
-        },
-        {
-            "name": "Greg Stewart",
-            "email": "greg.stewart@gmail.com"
-        }
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/brettswift/buildblink"
+  "name": "buildblink",
+  "version": "0.0.4",
+  "description": "an application to monitor continuous integration builds and notify you by a ThingM blink1 light.",
+  "author": "Brett Swift <brettswift@gmail.com>",
+  "contributors": [
+    {
+      "name": "Brett Swift",
+      "email": "brettswift@gmail.com"
     },
-    "homepage": "http://brettswift.github.io/BuildBlink",
-    "keywords": [
-        "continuous integration",
-        "ci",
-        "blink1",
-        "build",
-        "build light"
-    ],
-    "bin": {
-        "buildblink": "./bin/buildblink.js"
-    },
-    "main": "./lib/buildblink",
-    "preferGlobal": "true",
-    "dependencies": {
-        "seq": "0.3.5",
-        "request": "2.9.x",
-        "sprintf": "0.1.0",
-        "express": "3.x",
-        "nconf": "0.6.x",
-        "colors": "*",
-        "node-blink1": "0.1.x",
-        "forever": "0.10.x",
-        "prettyjson": "0.12.x",
-        "moment": "2.5.x",
-        "sync-prompt": "0.2.x"
-    },
-    "noAnalyze": true,
-    "devDependencies": {
-        "nodeunit": "0.7.x",
-        "should": "0.6.x",
-        "mocha": "1.2.1",
-        "node-inspector": "0.1.10"
-    },
-    "bundleDependencies": [],
-    "licenses": [
-        {
-          "type": "MIT",
-          "url": "http://rem.mit-license.org"
-        }
-    ],
-    "engine": {
-        "node": "0.10.x"
-    },
-    "scripts": {
-        "test": "make test",
-        "windowsTest": "node_modules\\.bin\\mocha -u tdd --reporter spec test\\"
+    {
+      "name": "Greg Stewart",
+      "email": "greg.stewart@gmail.com"
     }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brettswift/buildblink"
+  },
+  "homepage": "http://brettswift.github.io/BuildBlink",
+  "keywords": [
+    "continuous integration",
+    "ci",
+    "blink1",
+    "build",
+    "build light"
+  ],
+  "bin": {
+    "buildblink": "./bin/buildblink.js"
+  },
+  "main": "./lib/buildblink",
+  "preferGlobal": "true",
+  "dependencies": {
+    "seq": "0.3.5",
+    "request": "2.9.x",
+    "sprintf": "0.1.0",
+    "express": "3.x",
+    "nconf": "0.6.x",
+    "colors": "*",
+    "node-blink1": "0.1.x",
+    "forever": "0.10.x",
+    "prettyjson": "0.12.x",
+    "moment": "2.5.x",
+    "sync-prompt": "0.2.x"
+  },
+  "noAnalyze": true,
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-mocha-test": "^0.11.0",
+    "mocha": "1.2.1",
+    "node-inspector": "0.1.10",
+    "nodeunit": "0.7.x",
+    "should": "0.6.x"
+  },
+  "bundleDependencies": [],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://rem.mit-license.org"
+    }
+  ],
+  "engine": {
+    "node": "0.10.x"
+  },
+  "scripts": {
+    "test": "make test",
+    "windowsTest": "node_modules\\.bin\\mocha -u tdd --reporter spec test\\"
+  }
 }
