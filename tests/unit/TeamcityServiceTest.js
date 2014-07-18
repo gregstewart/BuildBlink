@@ -1,7 +1,7 @@
 var assert = require('assert');
 var should = require('should');
 
-var TeamCityService = require('./../lib/services/TeamCityService.js');
+var TeamCityService = require('./../../lib/services/TeamCityService.js');
 var fs = require('fs');
 
 suite('TeamCityService', function() {

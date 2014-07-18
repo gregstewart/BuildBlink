@@ -14,7 +14,7 @@
       "uuid": "f3c24130-d252-0131-d3dc-2e080cfc1ecc",
       "status": "success",
       "commit_id": "ba722ef97a1f64d4f059b6c9108beee83ae1be11",
-      "message": "added a test for the github parser and extracted the slightly complex commit message parsing into it's own method",
+      "message": "added a unit for the github parser and extracted the slightly complex commit message parsing into it's own method",
       "branch": "master"
     },
     {

@@ -2,10 +2,10 @@ var assert = require('assert');
 var should = require('should');
 var colors = require('colors');
 var prettyjson = require('prettyjson');
-var loadConfig = require('./../lib/conf/configure');
+var loadConfig = require('./../../lib/conf/configure');
 
-var CodeshipService = require('../lib/services/CodeshipService.js');
-var CodeshipBuildActivity = require('../lib/domain/CodeshipBuildActivity.js');
+var CodeshipService = require('../../lib/services/CodeshipService.js');
+var CodeshipBuildActivity = require('../../lib/domain/CodeshipBuildActivity.js');
 
 var fs = require('fs');
 
@@ -15,7 +15,7 @@ suite('CodeshipService', function() {
   var mockGateway = {};
 
   setup(function() {
-    config = JSON.parse(fs.readFileSync('./integrationtest/fakeCodeshipConfig.json', "utf8"));
+    config = JSON.parse(fs.readFileSync('./tests/integration/fakeCodeshipConfig.json', "utf8"));
     mockGateway.getBuildsForProjectId = function (projectId, callback) {
       callback(null, {
         "id":10213,

@@ -2,7 +2,7 @@ var assert = require('assert');
 var should = require('should');
 var fs = require('fs');
 
-var TeamCityBuildActivity = require('./../lib/domain/TeamCityBuildActivity');
+var TeamCityBuildActivity = require('./../../lib/domain/TeamCityBuildActivity');
 
 
 suite('TeamBuildActivity', function() {
@@ -14,7 +14,7 @@ suite('TeamBuildActivity', function() {
 
 	suite('should_correctly_identify_state_of_build', function() {
 		test('should_identify_green_build', function() {
-			var buildJson = JSON.parse(fs.readFileSync('./test/fixtures/teamcity/api/success.json', "utf8"));
+			var buildJson = JSON.parse(fs.readFileSync('./tests/unit/fixtures/teamcity/api/success.json', "utf8"));
 			var activity = new TeamCityBuildActivity(buildJson);
 
 			should.exist(activity.currentBuild.status, 'currentStatus property does not exist');
@@ -24,7 +24,7 @@ suite('TeamBuildActivity', function() {
 		});
 
 		test('should_identify_as_building_from_green', function() {
-			var buildJson = JSON.parse(fs.readFileSync('./test/fixtures/teamcity/api/buildingFromGreen.json', "utf8"));
+			var buildJson = JSON.parse(fs.readFileSync('./tests/unit/fixtures/teamcity/api/buildingFromGreen.json', "utf8"));
 			var activity = new TeamCityBuildActivity(buildJson);
 
 			should.exist(activity.currentBuild.status, 'currentStatus property does not exist');
@@ -39,7 +39,7 @@ suite('TeamBuildActivity', function() {
 		});
 
 		test('should_identify_as_building_from_red', function() {
-			var buildJson = JSON.parse(fs.readFileSync('./test/fixtures/teamcity/api/buildingFromRed.json', "utf8"));
+			var buildJson = JSON.parse(fs.readFileSync('./tests/unit/fixtures/teamcity/api/buildingFromRed.json', "utf8"));
 			var activity = new TeamCityBuildActivity(buildJson);
 
 			should.exist(activity.currentBuild.status, 'currentStatus property does not exist');
@@ -54,7 +54,7 @@ suite('TeamBuildActivity', function() {
 		});
 
 		test('should_identify_red_build', function() {
-			var buildJson = JSON.parse(fs.readFileSync('./test/fixtures/teamcity/api/redBuild.json', "utf8"));
+			var buildJson = JSON.parse(fs.readFileSync('./tests/unit/fixtures/teamcity/api/redBuild.json', "utf8"));
 			var activity = new TeamCityBuildActivity(buildJson);
 
 			should.exist(activity.currentBuild.status, 'currentStatus property does not exist');
@@ -70,7 +70,7 @@ suite('TeamBuildActivity', function() {
 
 
 		test('should_have_proper_build_token', function() {
-			var buildJson = JSON.parse(fs.readFileSync('./test/fixtures/teamcity/api/redBuild.json', "utf8"));
+			var buildJson = JSON.parse(fs.readFileSync('./tests/unit/fixtures/teamcity/api/redBuild.json', "utf8"));
 			var activity = new TeamCityBuildActivity(buildJson);
 
 			activity.should.have.property('instanceToken', 'bt4:83');

@@ -1,7 +1,7 @@
 var assert = require('assert');
 var should = require('should');
 
-var CodeshipGateway = require('../lib/gateways/CodeshipGateway.js');
+var CodeshipGateway = require('../../lib/gateways/CodeshipGateway.js');
 var fs = require('fs');
 
 suite('CodeshipGateway', function() {

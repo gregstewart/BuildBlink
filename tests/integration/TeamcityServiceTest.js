@@ -2,10 +2,10 @@ var assert = require('assert');
 var should = require('should');
 var colors = require('colors');
 var prettyjson = require('prettyjson');
-var loadConfig = require('./../lib/conf/configure');
+var loadConfig = require('./../../lib/conf/configure');
 
-var TeamCityService = require('../lib/services/TeamCityService.js');
-var TeamCityBuildActivity = require('../lib/domain/TeamCityBuildActivity.js');
+var TeamCityService = require('../../lib/services/TeamCityService.js');
+var TeamCityBuildActivity = require('../../lib/domain/TeamCityBuildActivity.js');
 
 var fs = require('fs');
 
@@ -15,7 +15,7 @@ suite('TeamcityService', function() {
 	var mockGateway = {};
 
 	setup(function() {
-		config = JSON.parse(fs.readFileSync('./integrationtest/fakeTeamCityConfig.json', "utf8"));
+		config = JSON.parse(fs.readFileSync('./tests/integration/fakeTeamCityConfig.json', "utf8"));
         mockGateway.getBuildsForProjectId = function (projectId, callback) {
           callback(null, { build: [{buildTypeId: projectId, id: ''}, {buildTypeId: '', id: ''}]});
         };

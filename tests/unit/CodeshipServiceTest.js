@@ -1,7 +1,7 @@
 var assert = require('assert');
 var should = require('should');
 
-var CodeshipService = require('./../lib/services/CodeshipService.js');
+var CodeshipService = require('./../../lib/services/CodeshipService.js');
 var fs = require('fs');
 
 suite('CodeshipService', function() {

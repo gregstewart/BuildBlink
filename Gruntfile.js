@@ -8,7 +8,7 @@ module.exports = function(grunt) {
                     ui: 'tdd',
                     reporter: 'spec'
                 },
-                src: ['test/**/*.js']
+                src: ['tests/**/*.js']
             }
         }
 
