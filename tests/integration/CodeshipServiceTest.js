@@ -5,7 +5,7 @@ var prettyjson = require('prettyjson');
 var loadConfig = require('./../../lib/conf/configure');
 
 var CodeshipService = require('../../lib/services/CodeshipService.js');
-var CodeshipBuildActivity = require('../../lib/domain/CodeshipBuildActivity.js');
+var BuildActivity = require('../../lib/domain/BuildActivity.js');
 
 var fs = require('fs');
 
@@ -52,7 +52,7 @@ suite('CodeshipService', function() {
     test('should_return_build_activity', function(done) {
 
       service.getBuildActivityForBuildId('973711', function(err, result) {
-        result.should.be.an.instanceof(CodeshipBuildActivity, "BuildActivity");
+        result.should.be.an.instanceof(BuildActivity, "BuildActivity");
         result.currentBuild.id.should.equal(973711);
         done();
       });

@@ -5,7 +5,7 @@ var prettyjson = require('prettyjson');
 var loadConfig = require('./../../lib/conf/configure');
 
 var TeamCityService = require('../../lib/services/TeamCityService.js');
-var TeamCityBuildActivity = require('../../lib/domain/TeamCityBuildActivity.js');
+var BuildActivity = require('../../lib/domain/BuildActivity.js');
 
 var fs = require('fs');
 
@@ -17,7 +17,7 @@ suite('TeamcityService', function() {
 	setup(function() {
 		config = JSON.parse(fs.readFileSync('./tests/integration/fakeTeamCityConfig.json', "utf8"));
         mockGateway.getBuildsForProjectId = function (projectId, callback) {
-          callback(null, { build: [{buildTypeId: projectId, id: ''}, {buildTypeId: '', id: ''}]});
+          callback(null, { build: [{buildTypeId: projectId, id: '', status: 'success'}, {buildTypeId: '', id: '', status: 'success'}]});
         };
 		service = new TeamCityService(config, mockGateway);
 
@@ -33,7 +33,7 @@ suite('TeamcityService', function() {
 		test('should_return_build_activity', function(done) {
 
 			service.getBuildActivityForBuildId('BranchingTest_Build', function(err, result) {
-                result.should.be.an.instanceof(TeamCityBuildActivity, "BuildActivity");
+                result.should.be.an.instanceof(BuildActivity, "BuildActivity");
 				result.currentBuild.buildTypeId.should.equal('BranchingTest_Build');
 				done();
 			});
